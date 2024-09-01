@@ -1,0 +1,87 @@
+﻿@page "/quotegame"
+@using Newtonsoft.Json
+@attribute [StreamRendering]
+<PageTitle>Quote Game</PageTitle>
+
+
+<h1>QuoteGame</h1>
+
+<h2>Quess who said it?</h2>
+
+
+@if(ronObject is not null && ronObject.Count > 0)
+{
+    <p>@ronObject[0]</p>
+}
+else
+{
+    <p>Loading</p>
+}
+
+
+@code {
+    private QuoteService _quoteService;
+    private List<string> ronObject = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {    
+        _quoteService = new QuoteService();
+        var kanyeRequest = await _quoteService.KanyeRequest();
+        var kanyeObject = ResponseDeserializer.DeserializeKanye(kanyeRequest);
+        var ronRequest = await _quoteService.RonRequest();
+        ronObject = ResponseDeserializer.DeserializeRon(ronRequest);
+
+    }
+
+    public class Kanye
+    {
+        public string Quote { get; set; }
+    }
+    public class RonRoot
+    {
+        public List<string> RonArray { get; set; } = new List<string>();
+    }
+    public class QuoteService
+    {
+        private HttpClient _client = new();
+        private readonly string _kanyeUrl = "https://api.kanye.rest";
+        private readonly string _ronUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
+
+        public async Task<string> KanyeRequest()
+        {
+            try
+            {
+                var kanyeResponse = await _client.GetStringAsync(_kanyeUrl);
+                return kanyeResponse;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+        public async Task<string> RonRequest()
+        {
+            try
+            {
+                var ronResponse = await _client.GetStringAsync(_ronUrl);
+                return ronResponse;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+    }
+    public static class ResponseDeserializer
+    {
+        public static Kanye DeserializeKanye(string kanyeResponse) => JsonConvert.DeserializeObject<Kanye>(kanyeResponse);
+
+        public static List<string> DeserializeRon(string ronResponse) => JsonConvert.DeserializeObject<List<string>>(ronResponse);
+    }
+   
+
+
+}

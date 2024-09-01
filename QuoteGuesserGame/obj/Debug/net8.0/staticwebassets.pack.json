@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\QuoteGuesserGame.bundle.scp.css",
+      "PackagePath": "staticwebassets\\QuoteGuesserGame.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.QuoteGuesserGame.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.QuoteGuesserGame.props",
+      "PackagePath": "build\\QuoteGuesserGame.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.QuoteGuesserGame.props",
+      "PackagePath": "buildMultiTargeting\\QuoteGuesserGame.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.QuoteGuesserGame.props",
+      "PackagePath": "buildTransitive\\QuoteGuesserGame.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuoteGuesserGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a971dc4ec5ee991d61454cc84cccebf8a1dd3f78")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3baa2b5aef22952c1cc096e109b80be483ce4cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuoteGuesserGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuoteGuesserGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

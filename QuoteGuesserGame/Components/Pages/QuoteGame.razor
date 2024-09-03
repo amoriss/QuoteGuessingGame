@@ -10,18 +10,23 @@
 <h2>Guess who said it?</h2>
 
 
-@if (_ronObject.Count > 0)
+@if (_currentQuote == "ron")
 {
     <p>@_ronObject[0]</p>
 }
-else
+else if (_currentQuote == "kanye")
 {
     <p>@_kanyeObject.Quote</p>
+}
+else
+{
+    <p>@_michaelScottObject.Statement</p>
 }
 
 
 <img class="box" src="/Images/ronswanson_headshot.jpg" alt="Ron Swanson" @onclick="GuessRon"/>
 <img class="box" src="/Images/kanye_west_headshot.jpg" alt="Kanye West" @onclick="GuessKanye"/>
+<img class="box" src="/Images/michael_scott_headshot.jpg" alt="Kanye West" @onclick="GuessMichaelScott"/>
 
 
 @if (!string.IsNullOrEmpty(_feedbackMessage))
@@ -33,50 +38,85 @@ else
 @code {
     private QuoteService? _quoteService;
     private List<string> _ronObject = new();
-    private Kanye _kanyeObject = new Kanye();
-    private string _feedbackMessage;
-    int randomNumber = RandomNumber();
+    private Kanye _kanyeObject = new();
+    private List<Quote> _michaelScottObjects = new();
+    private Quote _michaelScottObject = new();
+    private string? _currentQuote;
+    private string? _feedbackMessage;
 
     protected override async Task OnInitializedAsync()
     {
-        
-        await RandomQuote();
-        
-
+        _quoteService = new QuoteService();
+        await RandomQuote(_quoteService);
     }
 
     private static int RandomNumber()
     {
         Random random = new Random();
-        int randomNumber = random.Next(0, 2);
+        int randomNumber = random.Next(0, 3);
         return randomNumber;
     }
 
-    private async Task RandomQuote()
+    private async Task RandomQuote(QuoteService quoteService)
     {
         int randomNumber = RandomNumber();
-        _quoteService = new QuoteService();
-        
+
         if (randomNumber == 1)
         {
-            var ronRequest = await _quoteService.RonRequest();
+            var ronRequest = await quoteService.RonRequest();
             _ronObject = ResponseDeserializer.DeserializeRon(ronRequest);
+            _currentQuote = "ron";
+        }
+        else if (randomNumber == 2)
+        {
+            var kanyeRequest = await quoteService.KanyeRequest();
+            _kanyeObject = ResponseDeserializer.DeserializeKanye(kanyeRequest);
+            _currentQuote = "kanye";
         }
         else
         {
-            var kanyeRequest = await _quoteService.KanyeRequest();
-            _kanyeObject = ResponseDeserializer.DeserializeKanye(kanyeRequest);
+            var michaelScottRequest = await quoteService.MichaelScottRequest();
+            var michaelScottQuotes = ResponseDeserializer.DeserializeMichaelScott(michaelScottRequest);
+            var randomQuote = michaelScottQuotes[new Random().Next(michaelScottQuotes.Count)].Statement;
+            _michaelScottObject = new Quote { Statement = randomQuote };
+            _currentQuote = "michael";
         }
     }
 
     private void GuessRon()
     {
-        _feedbackMessage = "Correct!";
+        if (_currentQuote == "ron")
+        {
+            _feedbackMessage = "Correct!";
+        }
+        else
+        {
+            _feedbackMessage = "Incorrect";
+        }
     }
 
     private void GuessKanye()
     {
-        _feedbackMessage = "Incorrect";
+        if (_currentQuote == "kanye")
+        {
+            _feedbackMessage = "Correct!";
+        }
+        else
+        {
+            _feedbackMessage = "Incorrect";
+        }
+    }
+
+    private void GuessMichaelScott()
+    {
+        if (_currentQuote == "michael scott")
+        {
+            _feedbackMessage = "Correct!";
+        }
+        else
+        {
+            _feedbackMessage = "Incorrect";
+        }
     }
 
     public class Kanye
@@ -84,16 +124,22 @@ else
         public string Quote { get; set; }
     }
 
-    public class RonRoot
+    public class Quote
     {
-        public List<string> RonArray { get; set; } = new List<string>();
+        public string Statement { get; set; }
     }
+
+    // public class RonRoot
+    // {
+    //     public List<string> RonArray { get; set; } = new List<string>();
+    // }
 
     public class QuoteService
     {
         private HttpClient _client = new();
         private readonly string _kanyeUrl = "https://api.kanye.rest";
         private readonly string _ronUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
+        private readonly string _michaelScottUrl = "https://localhost:50410/quotes";
 
         public async Task<string> KanyeRequest()
         {
@@ -122,6 +168,12 @@ else
                 return null;
             }
         }
+
+        public async Task<string> MichaelScottRequest()
+        {
+            var response = await _client.GetStringAsync(_michaelScottUrl);
+            return response;
+        }
     }
 
     public static class ResponseDeserializer
@@ -129,6 +181,7 @@ else
         public static Kanye DeserializeKanye(string kanyeResponse) => JsonConvert.DeserializeObject<Kanye>(kanyeResponse);
 
         public static List<string> DeserializeRon(string ronResponse) => JsonConvert.DeserializeObject<List<string>>(ronResponse);
+        public static List<Quote> DeserializeMichaelScott(string michaelScottResponse) => JsonConvert.DeserializeObject<List<Quote>>(michaelScottResponse);
     }
 
 

@@ -11,6 +11,10 @@
       "RelativeMoniker": "D:0:0:{E65A4EDF-C4A9-454D-9DB8-148CFCD6A756}|QuoteGuesserGame\\QuoteGuesserGame.csproj|solutionrelative:quoteguessergame\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E65A4EDF-C4A9-454D-9DB8-148CFCD6A756}|QuoteGuesserGame\\QuoteGuesserGame.csproj|c:\\users\\amori\\original\\quoteguessergame\\quoteguessergame\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E65A4EDF-C4A9-454D-9DB8-148CFCD6A756}|QuoteGuesserGame\\QuoteGuesserGame.csproj|solutionrelative:quoteguessergame\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E65A4EDF-C4A9-454D-9DB8-148CFCD6A756}|QuoteGuesserGame\\QuoteGuesserGame.csproj|c:\\users\\amori\\original\\quoteguessergame\\quoteguessergame\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E65A4EDF-C4A9-454D-9DB8-148CFCD6A756}|QuoteGuesserGame\\QuoteGuesserGame.csproj|solutionrelative:quoteguessergame\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -47,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{E65A4EDF-C4A9-454D-9DB8-148CFCD6A756}|QuoteGuesserGame\\QuoteGuesserGame.csproj|solutionrelative:quoteguessergame\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65A4EDF-C4A9-454D-9DB8-148CFCD6A756}|QuoteGuesserGame\\QuoteGuesserGame.csproj|c:\\users\\amori\\original\\quoteguessergame\\quoteguessergame\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E65A4EDF-C4A9-454D-9DB8-148CFCD6A756}|QuoteGuesserGame\\QuoteGuesserGame.csproj|solutionrelative:quoteguessergame\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E65A4EDF-C4A9-454D-9DB8-148CFCD6A756}|QuoteGuesserGame\\QuoteGuesserGame.csproj|c:\\users\\amori\\original\\quoteguessergame\\quoteguessergame\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{E65A4EDF-C4A9-454D-9DB8-148CFCD6A756}|QuoteGuesserGame\\QuoteGuesserGame.csproj|solutionrelative:quoteguessergame\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
@@ -74,42 +74,16 @@
               "Title": "QuoteGame.razor",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\QuoteGame.razor",
               "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\Pages\\QuoteGame.razor",
-              "ToolTip": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\QuoteGame.razor*",
-              "RelativeToolTip": "QuoteGuesserGame\\Components\\Pages\\QuoteGame.razor*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "ToolTip": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\QuoteGame.razor",
+              "RelativeToolTip": "QuoteGuesserGame\\Components\\Pages\\QuoteGame.razor",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAswBEAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-01T21:22:08.985Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Weather.razor",
-              "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\Weather.razor",
-              "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\Pages\\Weather.razor",
-              "ToolTip": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\Weather.razor",
-              "RelativeToolTip": "QuoteGuesserGame\\Components\\Pages\\Weather.razor",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-01T21:21:06.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "QuoteGuesserGame\\Components\\Pages\\Home.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-01T21:21:04.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Error.razor",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\Error.razor",
               "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\Pages\\Error.razor",
@@ -122,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Counter.razor",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\Counter.razor",
               "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\Pages\\Counter.razor",
@@ -135,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Routes.razor",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Routes.razor",
               "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\Routes.razor",
@@ -148,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\Layout\\NavMenu.razor",
@@ -161,7 +135,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\app.css",
+              "RelativeDocumentMoniker": "QuoteGuesserGame\\wwwroot\\app.css",
+              "ToolTip": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\app.css",
+              "RelativeToolTip": "QuoteGuesserGame\\wwwroot\\app.css",
+              "ViewState": "AQIAADAAAAAAAAAAAAAwwDwAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-01T21:17:05.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Weather.razor",
+              "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\Pages\\Weather.razor",
+              "ToolTip": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\Weather.razor",
+              "RelativeToolTip": "QuoteGuesserGame\\Components\\Pages\\Weather.razor",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAC8AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-01T21:21:06.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "QuoteGuesserGame\\Components\\Pages\\Home.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-01T21:21:04.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "App.razor",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\App.razor",
               "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\App.razor",
@@ -174,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "QuoteGuesserGame\\Properties\\launchSettings.json",
@@ -187,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "QuoteGuesserGame\\Components\\Layout\\MainLayout.razor",
@@ -213,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\Program.cs",
               "RelativeDocumentMoniker": "QuoteGuesserGame\\Program.cs",
@@ -222,19 +235,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-01T21:16:26.786Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "app.css",
-              "DocumentMoniker": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\app.css",
-              "RelativeDocumentMoniker": "QuoteGuesserGame\\wwwroot\\app.css",
-              "ToolTip": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\app.css",
-              "RelativeToolTip": "QuoteGuesserGame\\wwwroot\\app.css",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-01T21:17:05.04Z",
               "EditorCaption": ""
             }
           ]

@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\QuoteGuesserGame.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\Images\\kanye_west_headshot.jpg",
+      "PackagePath": "staticwebassets\\Images\\kanye_west_headshot.jpg"
+    },
+    {
+      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\Images\\michael_scott_headshot.jpg",
+      "PackagePath": "staticwebassets\\Images\\michael_scott_headshot.jpg"
+    },
+    {
+      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\Images\\ronswanson_headshot.jpg",
+      "PackagePath": "staticwebassets\\Images\\ronswanson_headshot.jpg"
+    },
+    {
       "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },

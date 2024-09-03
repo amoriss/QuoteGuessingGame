@@ -30,3 +30,4 @@ C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\obj\Debug\net8.0\ref\Q
 C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\obj\Debug\net8.0\QuoteGuesserGame.csproj.AssemblyReference.cache
 C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\obj\Debug\net8.0\QuoteGue.836583CA.Up2Date
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\obj\Debug\net8.0\QuoteGuesserGame.sourcelink.json

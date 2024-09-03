@@ -1,46 +1,79 @@
 ﻿@page "/quotegame"
 @using Newtonsoft.Json
-@attribute [StreamRendering]
+@rendermode InteractiveServer
+
 <PageTitle>Quote Game</PageTitle>
 
 
 <h1>QuoteGame</h1>
 
-<h2>Quess who said it?</h2>
+<h2>Guess who said it?</h2>
 
 
-@if(ronObject is not null && ronObject.Count > 0)
+@if (_ronObject.Count > 0)
 {
-    <p>@ronObject[0]</p>
+    <p>@_ronObject[0]</p>
 }
 else
 {
     <p>Loading</p>
 }
 
+@* <img class="box" src="/Images/ronswanson_headshot.jpg" alt="Ron Swanson" @onclick="GuessRon"/> *@
+@if (!string.IsNullOrEmpty(_feedbackMessage))
+{
+    <p>@_feedbackMessage</p> 
+}
+
+<p>
+    <button class="btn btn-primary" @onclick="GuessRon">
+        Guess Ron
+    </button>
+</p>
+
+
+
+
 
 @code {
-    private QuoteService _quoteService;
-    private List<string> ronObject = new List<string>();
+    private QuoteService? _quoteService;
+    private List<string> _ronObject = new();
+    private string _feedbackMessage = "initial message";
 
     protected override async Task OnInitializedAsync()
-    {    
+    {
         _quoteService = new QuoteService();
-        var kanyeRequest = await _quoteService.KanyeRequest();
-        var kanyeObject = ResponseDeserializer.DeserializeKanye(kanyeRequest);
+        // var kanyeRequest = await _quoteService.KanyeRequest();
+        // var kanyeObject = ResponseDeserializer.DeserializeKanye(kanyeRequest);
         var ronRequest = await _quoteService.RonRequest();
-        ronObject = ResponseDeserializer.DeserializeRon(ronRequest);
+        _ronObject = ResponseDeserializer.DeserializeRon(ronRequest);
+    }
+    // private void GuessRon() => Guess("ron");
+    // private void GuessKanye() => Guess("kanye");
+    private void GuessRon()
+    {
+        
+        _feedbackMessage = "Correct!";
 
+    }
+
+    private void GuessKanye()
+    {
+        _feedbackMessage = "Incorrect";
+       
+       
     }
 
     public class Kanye
     {
         public string Quote { get; set; }
     }
+
     public class RonRoot
     {
         public List<string> RonArray { get; set; } = new List<string>();
     }
+
     public class QuoteService
     {
         private HttpClient _client = new();
@@ -75,13 +108,13 @@ else
             }
         }
     }
+
     public static class ResponseDeserializer
     {
         public static Kanye DeserializeKanye(string kanyeResponse) => JsonConvert.DeserializeObject<Kanye>(kanyeResponse);
 
         public static List<string> DeserializeRon(string ronResponse) => JsonConvert.DeserializeObject<List<string>>(ronResponse);
     }
-   
 
 
 }

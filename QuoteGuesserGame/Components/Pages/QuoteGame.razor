@@ -16,52 +16,67 @@
 }
 else
 {
-    <p>Loading</p>
+    <p>@_kanyeObject.Quote</p>
 }
 
-@* <img class="box" src="/Images/ronswanson_headshot.jpg" alt="Ron Swanson" @onclick="GuessRon"/> *@
+
+<img class="box" src="/Images/ronswanson_headshot.jpg" alt="Ron Swanson" @onclick="GuessRon"/>
+<img class="box" src="/Images/kanye_west_headshot.jpg" alt="Kanye West" @onclick="GuessKanye"/>
+
+
 @if (!string.IsNullOrEmpty(_feedbackMessage))
 {
-    <p>@_feedbackMessage</p> 
+    <p>@_feedbackMessage</p>
 }
-
-<p>
-    <button class="btn btn-primary" @onclick="GuessRon">
-        Guess Ron
-    </button>
-</p>
-
-
-
 
 
 @code {
     private QuoteService? _quoteService;
     private List<string> _ronObject = new();
-    private string _feedbackMessage = "initial message";
+    private Kanye _kanyeObject = new Kanye();
+    private string _feedbackMessage;
+    int randomNumber = RandomNumber();
 
     protected override async Task OnInitializedAsync()
     {
-        _quoteService = new QuoteService();
-        // var kanyeRequest = await _quoteService.KanyeRequest();
-        // var kanyeObject = ResponseDeserializer.DeserializeKanye(kanyeRequest);
-        var ronRequest = await _quoteService.RonRequest();
-        _ronObject = ResponseDeserializer.DeserializeRon(ronRequest);
+        
+        await RandomQuote();
+        
+
     }
-    // private void GuessRon() => Guess("ron");
-    // private void GuessKanye() => Guess("kanye");
+
+    private static int RandomNumber()
+    {
+        Random random = new Random();
+        int randomNumber = random.Next(0, 2);
+        return randomNumber;
+    }
+
+    private async Task RandomQuote()
+    {
+        int randomNumber = RandomNumber();
+        _quoteService = new QuoteService();
+        
+        if (randomNumber == 1)
+        {
+            var ronRequest = await _quoteService.RonRequest();
+            _ronObject = ResponseDeserializer.DeserializeRon(ronRequest);
+        }
+        else
+        {
+            var kanyeRequest = await _quoteService.KanyeRequest();
+            _kanyeObject = ResponseDeserializer.DeserializeKanye(kanyeRequest);
+        }
+    }
+
     private void GuessRon()
     {
-        
         _feedbackMessage = "Correct!";
-
     }
 
     private void GuessKanye()
     {
         _feedbackMessage = "Incorrect";
-       
-       
     }
 
     public class Kanye

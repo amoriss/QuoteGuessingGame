@@ -60,3 +60,42 @@ h1:focus {
     font-size:16px;
     background-color:darkmagenta;
 }
+.ron-box {
+    width:100px;
+    height: 100px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+}
+.ron-box:hover {
+    width:100px;
+    height: 100px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    background-color:darkmagenta;
+}
+.michael-box {
+    width:100px;
+    height: 100px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    background-color:darkmagenta;
+}
+.kanye-box {
+    width:100px;
+    height: 100px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    background-color:darkmagenta;
+}

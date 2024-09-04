@@ -24,9 +24,9 @@ else
 }
 
 
-<img class="box" src="/Images/ronswanson_headshot.jpg" alt="Ron Swanson" @onclick="GuessRon"/>
+<img class="ron-box" src="/Images/ronswanson_headshot.jpg" alt="Ron Swanson" @onclick="GuessRon"/>
 <img class="box" src="/Images/kanye_west_headshot.jpg" alt="Kanye West" @onclick="GuessKanye"/>
-<img class="box" src="/Images/michael_scott_headshot.jpg" alt="Kanye West" @onclick="GuessMichaelScott"/>
+<img class="box" src="/Images/michael_scott_headshot.jpg" alt="Michael Scott" @onclick="GuessMichaelScott"/>
 
 
 @if (!string.IsNullOrEmpty(_feedbackMessage))
@@ -79,7 +79,7 @@ else
             var michaelScottQuotes = ResponseDeserializer.DeserializeMichaelScott(michaelScottRequest);
             var randomQuote = michaelScottQuotes[new Random().Next(michaelScottQuotes.Count)].Statement;
             _michaelScottObject = new Quote { Statement = randomQuote };
-            _currentQuote = "michael";
+            _currentQuote = "michael scott";
         }
     }
 
@@ -128,18 +128,14 @@ else
     {
         public string Statement { get; set; }
     }
-
-    // public class RonRoot
-    // {
-    //     public List<string> RonArray { get; set; } = new List<string>();
-    // }
+    
 
     public class QuoteService
     {
         private HttpClient _client = new();
         private readonly string _kanyeUrl = "https://api.kanye.rest";
         private readonly string _ronUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
-        private readonly string _michaelScottUrl = "https://localhost:50410/quotes";
+        private readonly string _michaelScottUrl = "https://localhost:44393/quotes";
 
         public async Task<string> KanyeRequest()
         {
@@ -171,8 +167,17 @@ else
 
         public async Task<string> MichaelScottRequest()
         {
-            var response = await _client.GetStringAsync(_michaelScottUrl);
-            return response;
+            try
+            {
+                var response = await _client.GetStringAsync(_michaelScottUrl);
+                return response;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            
         }
     }
 

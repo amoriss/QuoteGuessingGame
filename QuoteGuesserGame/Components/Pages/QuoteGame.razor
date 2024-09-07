@@ -1,38 +1,65 @@
 ﻿@page "/quotegame"
 @using Newtonsoft.Json
+@inject IJSRuntime JS
 @rendermode InteractiveServer
 
 <PageTitle>Quote Game</PageTitle>
 
 
 <h1>QuoteGame</h1>
-
+<br/>
 <h2>Guess who said it?</h2>
 
 
 @if (_currentQuote == "ron")
 {
-    <p>@_ronObject[0]</p>
+    <div class="quote-container">
+    <p class="display-quote">"@_ronObject[0]"</p>
+    </div>
 }
 else if (_currentQuote == "kanye")
 {
-    <p>@_kanyeObject.Quote</p>
+    <div class="quote-container">
+    <p class="display-quote">"@_kanyeObject.Quote"</p>
+    </div>
+}
+else if (_currentQuote == "michael scott")
+{
+    <div class="quote-container">
+    <p class="display-quote">"@_michaelScottObject.Statement"</p>
+    </div>
 }
 else
 {
-    <p>@_michaelScottObject.Statement</p>
+    <p>Loading...</p>
 }
 
 
-<img class="ron-box" src="/Images/ronswanson_headshot.jpg" alt="Ron Swanson" @onclick="GuessRon"/>
-<img class="box" src="/Images/kanye_west_headshot.jpg" alt="Kanye West" @onclick="GuessKanye"/>
-<img class="box" src="/Images/michael_scott_headshot.jpg" alt="Michael Scott" @onclick="GuessMichaelScott"/>
+<div class="image-gallery">
+    <div class="image-container">
+        <img class="box" src="/Images/ronswanson_headshot.jpg" alt="Ron Swanson" @onclick="GuessRon"/>
+        <div class="overlay" @onclick="GuessRon">Ron said it</div>
+    </div>
 
+    <div class="image-container">
+        <img class="box" src="/Images/kanye_west_headshot.jpg" alt="Kanye West" @onclick="GuessKanye"/>
+        <div class="overlay" @onclick="GuessKanye">Kanye said it</div>
+    </div>
 
-@if (!string.IsNullOrEmpty(_feedbackMessage))
-{
-    <p>@_feedbackMessage</p>
-}
+    <div class="image-container">
+        <img class="box" src="/Images/michael_scott_headshot.jfif" alt="Michael Scott" @onclick="GuessMichaelScott"/>
+        <div class="overlay" @onclick="GuessMichaelScott">Michael said it</div>
+    </div>
+ 
+</div>
+
+   @if (!string.IsNullOrEmpty(_feedbackMessage))
+    {
+        <p class="display-feedback-message">@_feedbackMessage</p>
+        <br/>
+        <button style="margin:auto; display:block; justify-content: center" class="button-play-again" @onclick="RefreshPage">Play Again</button>
+    }
+
 
 
 @code {
@@ -55,6 +82,11 @@ else
         Random random = new Random();
         int randomNumber = random.Next(0, 3);
         return randomNumber;
+    }
+
+    private async Task RefreshPage()
+    {
+        await JS.InvokeVoidAsync("reloadPage");
     }
 
     private async Task RandomQuote(QuoteService quoteService)
@@ -87,11 +119,11 @@ else
     {
         if (_currentQuote == "ron")
         {
-            _feedbackMessage = "Correct!";
+            _feedbackMessage = "Correct! Ron said it.";
         }
         else
         {
-            _feedbackMessage = "Incorrect";
+            _feedbackMessage = "Incorrect - Ron did not say it";
         }
     }
 
@@ -99,11 +131,11 @@ else
     {
         if (_currentQuote == "kanye")
         {
-            _feedbackMessage = "Correct!";
+            _feedbackMessage = "Correct! Kanye said it.";
         }
         else
         {
-            _feedbackMessage = "Incorrect";
+            _feedbackMessage = "Incorrect - Kanye did not say it.";
         }
     }
 
@@ -111,11 +143,11 @@ else
     {
         if (_currentQuote == "michael scott")
         {
-            _feedbackMessage = "Correct!";
+            _feedbackMessage = "Correct! Michael Scott said it.";
         }
         else
         {
-            _feedbackMessage = "Incorrect";
+            _feedbackMessage = "Incorrect - Michael Scott did not say it";
         }
     }
 
@@ -128,7 +160,7 @@ else
     {
         public string Statement { get; set; }
     }
-    
+
 
     public class QuoteService
     {
@@ -177,7 +209,6 @@ else
                 Console.WriteLine(e.Message);
                 return null;
             }
-            
         }
     }
 
@@ -190,4 +221,5 @@ else
     }
 
 
+}
 }

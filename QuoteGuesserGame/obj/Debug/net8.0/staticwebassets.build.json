@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "63y8RJBfcMw6T8g7xahTuQ38boNlg8lOEPhaPFSGkQw=",
+  "Hash": "SaCUX1YqpvM7HZIahRuZ4qN+qjgC8CfFAquKKvlSfgk=",
   "Source": "QuoteGuesserGame",
   "BasePath": "_content/QuoteGuesserGame",
   "Mode": "Default",
@@ -150,12 +150,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\kanye_west_headshot.jpg"
     },
     {
-      "Identity": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\Images\\michael_scott_headshot.jpg",
+      "Identity": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\Images\\michael_scott_headshot.jfif",
       "SourceId": "QuoteGuesserGame",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\",
       "BasePath": "_content/QuoteGuesserGame",
-      "RelativePath": "Images/michael_scott_headshot.jpg",
+      "RelativePath": "Images/michael_scott_headshot.jfif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -166,7 +166,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\michael_scott_headshot.jpg"
+      "OriginalItemSpec": "wwwroot\\Images\\michael_scott_headshot.jfif"
     },
     {
       "Identity": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\Images\\ronswanson_headshot.jpg",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\ronswanson_headshot.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\site.js",
+      "SourceId": "QuoteGuesserGame",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\",
+      "BasePath": "_content/QuoteGuesserGame",
+      "RelativePath": "site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\site.js"
     }
   ]
 }

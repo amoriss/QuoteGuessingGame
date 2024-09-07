@@ -1,5 +1,6 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: lightgray;
 }
 
 a, .btn-link {
@@ -13,7 +14,7 @@ a, .btn-link {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 .content {
@@ -42,60 +43,121 @@ h1:focus {
     color: white;
 }
 
-    .blazor-error-boundary::after {
-        content: "An error has occurred."
-    }
+.blazor-error-boundary::after {
+    content: "An error has occurred."
+}
 
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
 }
 
-.box {
-    width:100px;
-    height: 100px;
-    border-radius:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:16px;
-    background-color:darkmagenta;
+h1, h2, p {
+    text-align: center;
 }
-.ron-box {
-    width:100px;
-    height: 100px;
-    border-radius:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:16px;
+
+.image-gallery {
+    display: flex; /* Use Flexbox to align items */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow wrapping of items if there are too many */
+    gap: 10px; /* Space between images */
 }
-.ron-box:hover {
-    width:100px;
-    height: 100px;
-    border-radius:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:16px;
-    background-color:darkmagenta;
+
+.image-container {
+    position: relative; /* Position relative to contain the overlay */
+    display: inline-block; /* Display images in a row */
+    margin: 10px; /* Space between images */
+    justify-content: center;
+    cursor: default;
 }
-.michael-box {
-    width:100px;
-    height: 100px;
-    border-radius:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:16px;
-    background-color:darkmagenta;
+
+img.box {
+    width: 250px;
+    height: 250px;
+    border-radius: 25%; /* Rounded images */
+    display: block; /* Prevent extra space below images */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
 }
-.kanye-box {
-    width:100px;
-    height: 100px;
-    border-radius:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:16px;
-    background-color:darkmagenta;
+
+.overlay {
+    position: absolute; /* Position overlay absolutely within the container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark background for text */
+    color: white;
+    font-size: 24px;
+    display: flex; /* Center text horizontally and vertically */
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    border-radius: 25%; /* Match the image's rounded corners */
+    text-align: center; /* Center text inside overlay */
+}
+
+.image-container:hover .box {
+    opacity: 0.5; /* Reduce image opacity on hover */
+}
+
+.image-container:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-quote {
+    font-size: 35px;
+    border: 2px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    max-width: 50%;
+    border-radius: 25px;
+    background-color: #ffffff;
+    color: black;
+    text-align: center;
+    position: relative;
+
+}
+
+/*.display-quote::before {*/
+/*    font-size: 100px;*/
+/*    content: '"';*/
+/*    position: absolute;*/
+/*    top: -30px;*/
+/*    left: 10px;*/
+/*    opacity: .5;*/
+/*}*/
+/*.display-quote::after {*/
+/*    font-size: 100px;*/
+/*    content: '"';*/
+/*    position: absolute;*/
+/*    top: -30px;*/
+/*    left: 10px;*/
+/*    opacity: .5;*/
+/*}*/
+
+
+.display-feedback-message {
+    font-size: 35px;
+    color: #161669;
+}
+.button-play-again {
+    background-color: #19965f; /* Button background color */
+    border: none; /* Remove default border */
+    border-radius: 30px; /* Rounded corners */
+    padding: 20px 30px; /* Padding inside the button */
+    color: white; /* Text color */
+    font-size: 24px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center text */
+    margin-top: 40px; /* Space between button and image */
+    display: inline-block; /* Ensure button does not stretch */
+}
+.button-play-again:hover {
+    background-color: #033362;
 }

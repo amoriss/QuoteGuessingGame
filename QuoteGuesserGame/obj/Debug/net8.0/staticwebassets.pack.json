@@ -9,8 +9,8 @@
       "PackagePath": "staticwebassets\\Images\\kanye_west_headshot.jpg"
     },
     {
-      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\Images\\michael_scott_headshot.jpg",
-      "PackagePath": "staticwebassets\\Images\\michael_scott_headshot.jpg"
+      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\Images\\michael_scott_headshot.jfif",
+      "PackagePath": "staticwebassets\\Images\\michael_scott_headshot.jfif"
     },
     {
       "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\Images\\ronswanson_headshot.jpg",
@@ -31,6 +31,10 @@
     {
       "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\wwwroot\\site.js",
+      "PackagePath": "staticwebassets\\site.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.QuoteGuesserGame.Microsoft.AspNetCore.StaticWebAssets.props",

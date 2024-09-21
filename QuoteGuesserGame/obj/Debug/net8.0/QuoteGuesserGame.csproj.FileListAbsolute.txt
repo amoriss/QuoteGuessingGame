@@ -30,3 +30,15 @@ C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\obj\Debug\net8.0\ref\Q
 C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\obj\Debug\net8.0\QuoteGuesserGame.csproj.AssemblyReference.cache
 C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\obj\Debug\net8.0\QuoteGue.836583CA.Up2Date
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\obj\Debug\net8.0\QuoteGuesserGame.sourcelink.json
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Blazorise.dll
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Blazorise.Licensing.dll
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\amori\Original\QuoteGuesserGame\QuoteGuesserGame\bin\Debug\net8.0\Microsoft.JSInterop.dll

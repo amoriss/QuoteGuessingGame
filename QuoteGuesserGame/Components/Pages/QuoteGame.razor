@@ -1,51 +1,173 @@
 ﻿@page "/quotegame"
 @using Newtonsoft.Json
-@attribute [StreamRendering]
+@inject IJSRuntime JS
+@rendermode InteractiveServer
+
 <PageTitle>Quote Game</PageTitle>
 
 
 <h1>QuoteGame</h1>
+<br/>
+<h2>Guess who said it?</h2>
 
-<h2>Quess who said it?</h2>
 
-
-@if(ronObject is not null && ronObject.Count > 0)
+@if (_currentQuote == "ron")
 {
-    <p>@ronObject[0]</p>
+    <div class="quote-container">
+    <p class="display-quote">"@_ronObject[0]"</p>
+    </div>
+}
+else if (_currentQuote == "kanye")
+{
+    <div class="quote-container">
+    <p class="display-quote">"@_kanyeObject.Quote"</p>
+    </div>
+}
+else if (_currentQuote == "michael scott")
+{
+    <div class="quote-container">
+    <p class="display-quote">"@_michaelScottObject.Statement"</p>
+    </div>
 }
 else
 {
-    <p>Loading</p>
+    <p>Loading...</p>
 }
 
 
+<div class="image-gallery">
+    <div class="image-container">
+        <img class="box" src="/Images/ronswanson_headshot.jpg" alt="Ron Swanson" @onclick="GuessRon"/>
+        <div class="overlay" @onclick="GuessRon">Ron said it</div>
+    </div>
+
+    <div class="image-container">
+        <img class="box" src="/Images/kanye_west_headshot.jpg" alt="Kanye West" @onclick="GuessKanye"/>
+        <div class="overlay" @onclick="GuessKanye">Kanye said it</div>
+    </div>
+
+    <div class="image-container">
+        <img class="box" src="/Images/michael_scott_headshot.jfif" alt="Michael Scott" @onclick="GuessMichaelScott"/>
+        <div class="overlay" @onclick="GuessMichaelScott">Michael said it</div>
+    </div>
+ 
+</div>
+
+   @if (!string.IsNullOrEmpty(_feedbackMessage))
+    {
+        <p class="display-feedback-message">@_feedbackMessage</p>
+        <br/>
+        <button style="margin:auto; display:block; justify-content: center" class="button-play-again" @onclick="RefreshPage">Play Again</button>
+    }
+
+
+
 @code {
-    private QuoteService _quoteService;
-    private List<string> ronObject = new List<string>();
+    private QuoteService? _quoteService;
+    private List<string> _ronObject = new();
+    private Kanye _kanyeObject = new();
+    private List<Quote> _michaelScottObjects = new();
+    private Quote _michaelScottObject = new();
+    private string? _currentQuote;
+    private string? _feedbackMessage;
 
     protected override async Task OnInitializedAsync()
-    {    
+    {
         _quoteService = new QuoteService();
-        var kanyeRequest = await _quoteService.KanyeRequest();
-        var kanyeObject = ResponseDeserializer.DeserializeKanye(kanyeRequest);
-        var ronRequest = await _quoteService.RonRequest();
-        ronObject = ResponseDeserializer.DeserializeRon(ronRequest);
+        await RandomQuote(_quoteService);
+    }
 
+    private static int RandomNumber()
+    {
+        Random random = new Random();
+        int randomNumber = random.Next(0, 3);
+        return randomNumber;
+    }
+
+    private async Task RefreshPage()
+    {
+        await JS.InvokeVoidAsync("reloadPage");
+    }
+
+    private async Task RandomQuote(QuoteService quoteService)
+    {
+        int randomNumber = RandomNumber();
+
+        if (randomNumber == 1)
+        {
+            var ronRequest = await quoteService.RonRequest();
+            _ronObject = ResponseDeserializer.DeserializeRon(ronRequest);
+            _currentQuote = "ron";
+        }
+        else if (randomNumber == 2)
+        {
+            var kanyeRequest = await quoteService.KanyeRequest();
+            _kanyeObject = ResponseDeserializer.DeserializeKanye(kanyeRequest);
+            _currentQuote = "kanye";
+        }
+        else
+        {
+            var michaelScottRequest = await quoteService.MichaelScottRequest();
+            var michaelScottQuotes = ResponseDeserializer.DeserializeMichaelScott(michaelScottRequest);
+            var randomQuote = michaelScottQuotes[new Random().Next(michaelScottQuotes.Count)].Statement;
+            _michaelScottObject = new Quote { Statement = randomQuote };
+            _currentQuote = "michael scott";
+        }
+    }
+
+    private void GuessRon()
+    {
+        if (_currentQuote == "ron")
+        {
+            _feedbackMessage = "Correct! Ron said it.";
+        }
+        else
+        {
+            _feedbackMessage = "Incorrect - Ron did not say it";
+        }
+    }
+
+    private void GuessKanye()
+    {
+        if (_currentQuote == "kanye")
+        {
+            _feedbackMessage = "Correct! Kanye said it.";
+        }
+        else
+        {
+            _feedbackMessage = "Incorrect - Kanye did not say it.";
+        }
+    }
+
+    private void GuessMichaelScott()
+    {
+        if (_currentQuote == "michael scott")
+        {
+            _feedbackMessage = "Correct! Michael Scott said it.";
+        }
+        else
+        {
+            _feedbackMessage = "Incorrect - Michael Scott did not say it";
+        }
     }
 
     public class Kanye
     {
         public string Quote { get; set; }
     }
-    public class RonRoot
+
+    public class Quote
     {
-        public List<string> RonArray { get; set; } = new List<string>();
+        public string Statement { get; set; }
     }
+
+
     public class QuoteService
     {
         private HttpClient _client = new();
         private readonly string _kanyeUrl = "https://api.kanye.rest";
         private readonly string _ronUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
+        private readonly string _michaelScottUrl = "https://localhost:44393/quotes";
 
         public async Task<string> KanyeRequest()
         {
@@ -74,14 +196,30 @@ else
                 return null;
             }
         }
+
+        public async Task<string> MichaelScottRequest()
+        {
+            try
+            {
+                var response = await _client.GetStringAsync(_michaelScottUrl);
+                return response;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
     }
+
     public static class ResponseDeserializer
     {
         public static Kanye DeserializeKanye(string kanyeResponse) => JsonConvert.DeserializeObject<Kanye>(kanyeResponse);
 
         public static List<string> DeserializeRon(string ronResponse) => JsonConvert.DeserializeObject<List<string>>(ronResponse);
+        public static List<Quote> DeserializeMichaelScott(string michaelScottResponse) => JsonConvert.DeserializeObject<List<Quote>>(michaelScottResponse);
     }
-   
 
 
+}
 }

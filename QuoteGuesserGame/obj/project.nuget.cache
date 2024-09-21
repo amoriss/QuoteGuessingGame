@@ -1,10 +1,25 @@
 {
   "version": 2,
-  "dgSpecHash": "ycKrnsSlRxF6G4YkWt5c0jd4L/3CAx3SvigZBXpBCAPkbzlbDrt5gMT2isR8KjGr+788gKIh35fLPeWYBh90Vg==",
+  "dgSpecHash": "4G5tK/hc9v+evgF8HBN8N+MRHMtd1e0T1y+qT0ExfOz8CHodUNDmzvh8h3oBsGcg2lMIUD4Yg/vibHGTU2cImw==",
   "success": true,
   "projectFilePath": "C:\\Users\\amori\\Original\\QuoteGuesserGame\\QuoteGuesserGame\\QuoteGuesserGame.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\amori\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\amori\\.nuget\\packages\\blazorise\\1.6.1\\blazorise.1.6.1.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\blazorise.licensing\\1.2.0\\blazorise.licensing.1.2.0.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.8\\microsoft.aspnetcore.authorization.8.0.8.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.8\\microsoft.aspnetcore.components.8.0.8.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.8\\microsoft.aspnetcore.components.analyzers.8.0.8.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\8.0.8\\microsoft.aspnetcore.components.forms.8.0.8.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.web\\8.0.8\\microsoft.aspnetcore.components.web.8.0.8.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.8\\microsoft.aspnetcore.metadata.8.0.8.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.jsinterop\\8.0.8\\microsoft.jsinterop.8.0.8.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
